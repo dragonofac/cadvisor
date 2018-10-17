@@ -117,13 +117,14 @@ func init() {
 
 func main() {
 	defer glog.Flush()
+	fmt.Printf("aaa")
 	flag.Parse()
-
+	fmt.Printf("bbb")
 	if *versionFlag {
 		fmt.Printf("cAdvisor version %s (%s)\n", version.Info["version"], version.Info["revision"])
 		os.Exit(0)
 	}
-
+	fmt.Printf("ccc")
 	includedMetrics := toIncludedMetrics(ignoreMetrics.MetricSet)
 
 	setMaxProcs()
